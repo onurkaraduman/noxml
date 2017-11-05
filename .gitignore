@@ -27,3 +27,6 @@ out/
 
 # Cursive Clojure plugin
 .idea/replstate.xml
+
+# General
+target/
