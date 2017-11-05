@@ -1,0 +1,5 @@
+com/noxml/reader/XmlReader.class
+com/noxml/reader/Reader.class
+com/noxml/log/Logger.class
+com/noxml/log/LogManager.class
+com/noxml/log/LogHandler.class
