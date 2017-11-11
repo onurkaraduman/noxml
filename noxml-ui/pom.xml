@@ -9,8 +9,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
+    <name>com.noxml-ui</name>
 
-    <groupId>groupId</groupId>
     <artifactId>noxml-ui</artifactId>
     <version>1.0-SNAPSHOT</version>
 

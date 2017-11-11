@@ -1,0 +1,30 @@
+package com.noxml.editor;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+/**
+ * @author Onur Karaduman
+ * @since 03.11.17
+ */
+public class Main extends Application {
+    private Parent rootNode;
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Main.fxml"));
+        rootNode = fxmlLoader.load();
+        Scene scene = new Scene(rootNode, 700, 800);
+
+        stage.setTitle("FXML Welcome");
+        stage.setScene(scene);
+        stage.show();
+    }
+}

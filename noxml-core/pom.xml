@@ -7,7 +7,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>noxml-core</artifactId>
+    <artifactId>com.noxml-core</artifactId>
     <packaging>jar</packaging>
 
     <name>noxml-core</name>

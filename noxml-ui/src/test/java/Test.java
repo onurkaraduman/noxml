@@ -14,7 +14,7 @@ public class Test {
 
     @org.junit.Test
     public void test() throws DocumentException {
-        XmlReader xmlReader = new XmlReader(Paths.get("src/main/resources/noxml/tree/fix44-short.xml"));
+        XmlReader xmlReader = new XmlReader(Paths.get("src/main/resources/com/noxml/tree/fix44-short.xml"));
         Document document = xmlReader.getDocument();
         Element rootElement = document.getRootElement();
         Element testElement = DocumentHelper.createElement("testElement");
