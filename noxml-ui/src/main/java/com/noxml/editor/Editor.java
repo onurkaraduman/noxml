@@ -19,7 +19,7 @@ public interface Editor {
 
     void close();
 
-    void open(String path);
+    void open();
 
     void help();
 

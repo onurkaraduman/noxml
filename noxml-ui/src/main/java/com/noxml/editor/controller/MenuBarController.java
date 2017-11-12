@@ -15,7 +15,7 @@ public class MenuBarController {
     }
 
     public void handleOpen() {
-
+        AppController.editor.open();
     }
 
     public void handleSaveAs() {
@@ -30,7 +30,7 @@ public class MenuBarController {
     }
 
     public void handleExit() {
-        MainController.editor.close();
+        AppController.editor.close();
     }
 
     public void handleReportProblem() {

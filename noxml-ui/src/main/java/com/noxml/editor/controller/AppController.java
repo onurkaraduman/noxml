@@ -10,7 +10,7 @@ import org.dom4j.DocumentException;
  * @author Onur Karaduman
  * @since 03.11.17
  */
-public class MainController {
+public class AppController {
 
     @FXML
     private HistoryTabController historyTabController;
@@ -28,8 +28,7 @@ public class MainController {
 
     @FXML
     private void initialize() throws DocumentException {
-        String xmlPath = "noxml-ui/src/main/resources/com/noxml/tree/fix44-short.xml";
-        editor = new XmlEditor(xmlPath, xmlTabController.treeView, editTabController.gpEdit, historyTabController.tblHistory);
+        editor = new XmlEditor(xmlTabController.treeView, editTabController.gpEdit, historyTabController.tblHistory);
         menuController.injectXmlTabController(xmlTabController);
     }
 }

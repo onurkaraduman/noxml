@@ -10,8 +10,9 @@ import javafx.stage.Stage;
  * @author Onur Karaduman
  * @since 03.11.17
  */
-public class Main extends Application {
-    private Parent rootNode;
+public class App extends Application {
+    public static Parent rootNode;
+    public static Stage stage;
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -19,7 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/App.fxml"));
         rootNode = fxmlLoader.load();
         Scene scene = new Scene(rootNode, 700, 800);
 

@@ -16,7 +16,7 @@ public class XmlTabController {
 
     public void save() {
         try {
-            MainController.editor.save();
+            AppController.editor.save();
         } catch (IOException e) {
             LOG.error("Error during saving", e);
         }
@@ -25,7 +25,7 @@ public class XmlTabController {
 
     public void saveAs(String path) {
         try {
-            MainController.editor.saveAs(path);
+            AppController.editor.saveAs(path);
         } catch (IOException e) {
             LOG.error("Error during saving", e);
         }

@@ -29,7 +29,12 @@ public class XmlTab {
     public XmlTab(String path, XmlTreeView treeView) throws DocumentException {
         init();
         this.xmlTreeView = treeView;
-        xmlTreeView.loadXml(path);
+        loadXml(path);
+    }
+
+    public XmlTab(XmlTreeView treeView) throws DocumentException {
+        init();
+        this.xmlTreeView = treeView;
     }
 
     public XmlTab() {
@@ -97,5 +102,9 @@ public class XmlTab {
             writer = new XMLWriter(outputStream, format);
             writer.write(xmlTreeView.getDocument());
         }
+    }
+
+    public void loadXml(String path) throws DocumentException {
+        xmlTreeView.loadXml(path);
     }
 }
