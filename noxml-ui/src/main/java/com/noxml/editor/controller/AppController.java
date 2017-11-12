@@ -28,7 +28,7 @@ public class AppController {
 
     @FXML
     private void initialize() throws DocumentException {
-        editor = new XmlEditor(xmlTabController.treeView, editTabController.gpEdit, historyTabController.tblHistory);
+        editor = new XmlEditor(xmlTabController.getTreeView(), editTabController.getGpEdit(), historyTabController.getTblHistory());
         menuController.injectXmlTabController(xmlTabController);
     }
 }

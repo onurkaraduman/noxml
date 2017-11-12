@@ -41,4 +41,12 @@ public class MenuBarController {
 
     public void handleOnlineManual() {
     }
+
+    public void handleUndo() {
+        xmlTabController.undo();
+    }
+
+    public void handleRedo() {
+        xmlTabController.redo();
+    }
 }

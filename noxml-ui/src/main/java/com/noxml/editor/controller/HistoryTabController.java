@@ -7,5 +7,9 @@ public class HistoryTabController {
 
 
     @FXML
-    TableView tblHistory;
+    private TableView tblHistory;
+
+    public TableView getTblHistory() {
+        return tblHistory;
+    }
 }

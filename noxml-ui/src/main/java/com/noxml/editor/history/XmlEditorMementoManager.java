@@ -20,7 +20,7 @@ public class XmlEditorMementoManager {
     }
 
     public void save(Element element) {
-        currentState = new XmlEditorMemento(element);
+        currentState = new XmlEditorMemento((Element) element.clone());
         mementoList.add(currentState);
     }
 

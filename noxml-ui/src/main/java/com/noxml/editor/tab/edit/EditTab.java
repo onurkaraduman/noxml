@@ -23,4 +23,8 @@ public class EditTab {
     public void createNewElement() {
         editPane.createNewElement();
     }
+
+    public void addEventHandler(EditHandlerType type, EditHandler editHandler) {
+        editPane.addEventHandler(type, editHandler);
+    }
 }

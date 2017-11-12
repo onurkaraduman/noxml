@@ -6,5 +6,9 @@ import com.noxml.editor.tab.edit.pane.EditPane;
 public class EditTabController {
 
     @FXML
-    EditPane gpEdit;
+    private EditPane gpEdit;
+
+    public EditPane getGpEdit() {
+        return gpEdit;
+    }
 }

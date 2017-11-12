@@ -75,7 +75,7 @@ public class XmlTab {
         xmlTreeView.recreateTreeItem(mementoManager.redo().getState());
     }
 
-    public void save() {
+    public void saveState() {
         mementoManager.save(xmlTreeView.getRootElement());
     }
 
@@ -83,17 +83,6 @@ public class XmlTab {
         xmlTreeView.recreateTreeItem(mementoManager.getCurrentState().getState());
     }
 
-    public void close() {
-    }
-
-    public void open(String path) {
-    }
-
-    public void help() {
-    }
-
-    public void clear() {
-    }
 
     public void export(String path) throws IOException {
         try (OutputStream outputStream = new FileOutputStream(path)) {
@@ -106,5 +95,6 @@ public class XmlTab {
 
     public void loadXml(String path) throws DocumentException {
         xmlTreeView.loadXml(path);
+        saveState();
     }
 }

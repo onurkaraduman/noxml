@@ -64,10 +64,22 @@ public class EditPane extends GridPane implements Component {
         });
         controlPane.addEditHandler(EditHandlerType.SAVE, event -> {
             save();
+            List<EditHandler> editHandlers = handlers.get(EditHandlerType.SAVE);
+            if (editHandlers != null) {
+                for (EditHandler editHandler : editHandlers) {
+                    editHandler.handle(event);
+                }
+            }
 
         });
         controlPane.addEditHandler(EditHandlerType.PLUS, event -> {
             addAttribute();
+            List<EditHandler> editHandlers = handlers.get(EditHandlerType.PLUS);
+            if (editHandlers != null) {
+                for (EditHandler editHandler : editHandlers) {
+                    editHandler.handle(event);
+                }
+            }
         });
         controlPane.createControls();
         add(controlPane, 0, 0);

@@ -11,8 +11,11 @@ public class XmlTabController {
     public static Logger LOG = Logger.getLogger(XmlTabController.class);
 
     @FXML
-    XmlTreeView treeView;
+    private XmlTreeView treeView;
 
+    public XmlTreeView getTreeView() {
+        return treeView;
+    }
 
     public void save() {
         try {
@@ -29,5 +32,13 @@ public class XmlTabController {
         } catch (IOException e) {
             LOG.error("Error during saving", e);
         }
+    }
+
+    public void undo() {
+        AppController.editor.undo();
+    }
+
+    public void redo() {
+        AppController.editor.redo();
     }
 }

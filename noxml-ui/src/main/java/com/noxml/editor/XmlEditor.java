@@ -1,6 +1,7 @@
 package com.noxml.editor;
 
 import com.noxml.editor.handler.type.XmlEventHandlerAction;
+import com.noxml.editor.tab.edit.EditHandlerType;
 import com.noxml.editor.tab.edit.EditTab;
 import com.noxml.editor.tab.edit.pane.EditPane;
 import com.noxml.editor.tab.history.HistoryTab;
@@ -34,6 +35,9 @@ public class XmlEditor implements Editor {
         xmlTab.getXmlTreeView().addEventHandler(XmlEventHandlerAction.ADD_FIELD, event -> {
             editTab.createNewElement();
         });
+        editTab.addEventHandler(EditHandlerType.SAVE, event -> {
+            xmlTab.saveState();
+        });
     }
 
     public XmlEditor(XmlTreeView treeView, EditPane gridPane, TableView tableView) throws DocumentException {
@@ -46,15 +50,21 @@ public class XmlEditor implements Editor {
         xmlTab.getXmlTreeView().addEventHandler(XmlEventHandlerAction.ADD_FIELD, event -> {
             editTab.createNewElement();
         });
+        editTab.addEventHandler(EditHandlerType.SAVE, event -> {
+            xmlTab.saveState();
+        });
     }
+
 
     @Override
     public void undo() {
+        xmlTab.undo();
 
     }
 
     @Override
     public void redo() {
+        xmlTab.redo();
 
     }
 

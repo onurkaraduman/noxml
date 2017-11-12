@@ -6,5 +6,9 @@ import javafx.scene.control.TableView;
 public class LogTabController {
 
     @FXML
-    TableView tblLog;
+    private TableView tblLog;
+
+    public TableView getTblLog() {
+        return tblLog;
+    }
 }

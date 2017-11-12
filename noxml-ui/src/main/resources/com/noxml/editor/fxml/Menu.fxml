@@ -14,6 +14,10 @@
                 <MenuItem text="Exit" onAction="#handleExit"/>
             </items>
         </Menu>
+        <Menu text="Edit">
+            <MenuItem text="Undo" onAction="#handleUndo"/>
+            <MenuItem text="Redo" onAction="#handleRedo"/>
+        </Menu>
         <Menu text="Help">
             <items>
                 <MenuItem text="Report Problem" onAction="#handleReportProblem"/>
