@@ -1,5 +1,7 @@
 package com.noxml.editor;
 
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +16,8 @@ public class App extends Application {
     public static Parent rootNode;
     public static Stage stage;
     public static String[] args;
+    public static HostServicesDelegate hostService;
+
 
     public static void main(String[] args) {
         App.args = args;
@@ -29,5 +33,7 @@ public class App extends Application {
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
+
+        hostService = HostServicesFactory.getInstance(this);
     }
 }

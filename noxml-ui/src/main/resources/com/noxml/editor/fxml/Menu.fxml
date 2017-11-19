@@ -9,7 +9,7 @@
             <items>
                 <MenuItem text="Open" onAction="#handleOpen"/>
                 <MenuItem text="Save" onAction="#handleSave"/>
-                <MenuItem text="Save As" onAction="#handleSaveAs"/>
+                <!--<MenuItem text="Save As" onAction="#handleSaveAs"/>-->
                 <SeparatorMenuItem/>
                 <MenuItem text="Exit" onAction="#handleExit"/>
             </items>
@@ -21,8 +21,6 @@
         <Menu text="Help">
             <items>
                 <MenuItem text="Report Problem" onAction="#handleReportProblem"/>
-                <MenuItem text="Donation" onAction="#handleDonation"/>
-                <MenuItem text="Online Manual" onAction="#handleOnlineManual"/>
                 <SeparatorMenuItem/>
                 <MenuItem text="About" onAction="#handleAbout"/>
             </items>

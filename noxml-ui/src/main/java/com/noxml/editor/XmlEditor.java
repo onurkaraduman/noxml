@@ -17,9 +17,13 @@ import com.noxml.logging.Logger;
 import javafx.scene.control.TableView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.maven.model.Model;
+import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
+import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.dom4j.DocumentException;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class XmlEditor implements Editor {
@@ -150,5 +154,11 @@ public class XmlEditor implements Editor {
     @Override
     public void export(String path) throws IOException {
 
+    }
+
+    public String getVersion() throws IOException, XmlPullParserException {
+        MavenXpp3Reader reader = new MavenXpp3Reader();
+        Model model = reader.read(new FileReader("pom.xml"));
+        return model.getProperties().getProperty("project.version");
     }
 }
