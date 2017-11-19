@@ -22,8 +22,8 @@
                         <SplitPane dividerPositions="0.3058823529411765" AnchorPane.bottomAnchor="0.0"
                                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <items>
+                                <fx:include fx:id="textTab" source="TextTab.fxml"/>
                                 <fx:include fx:id="xmlTab" source="XmlTab.fxml"/>
-                                <fx:include fx:id="editTab" source="EditTab.fxml"/>
                             </items>
                         </SplitPane>
                     </children>
@@ -34,6 +34,7 @@
                     <items>
                         <fx:include fx:id="historyTab" source="HistoryTab.fxml"/>
                         <fx:include fx:id="logTab" source="LogTab.fxml"/>
+                        <fx:include fx:id="editTab" source="EditTab.fxml"/>
                     </items>
                 </SplitPane>
 

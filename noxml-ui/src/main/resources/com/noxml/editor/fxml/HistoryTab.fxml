@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import com.noxml.editor.tab.history.HistoryTableCellFactory?>
 <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.noxml.editor.controller.HistoryTabController">
     <children>
@@ -13,8 +14,9 @@
                     <content>
                         <TableView fx:id="tblHistory">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="Date"/>
-                                <TableColumn prefWidth="75.0" text="Change"/>
+                                <TableColumn prefWidth="75.0" text="Date" fx:id="tblColumnDate"/>
+                                <TableColumn prefWidth="75.0" text="Change" fx:id="tblColumnChange"/>
+                                <TableColumn prefWidth="75.0" text="ID" fx:id="tblColumnId"/>
                             </columns>
                         </TableView>
                     </content>

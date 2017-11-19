@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <fix major="4" minor="4">
     <header>
         <field name="BeginString" required="Y"/>
@@ -3583,27 +3585,27 @@
             <field name="EncodedText" required="N"/>
         </message>
         <message name="NetworkStatusRequest" msgtype="BC" msgcat="app">
-            <field name="NetworkRequestType" required="Y" />
-            <field name="NetworkRequestID" required="Y" />
+            <field name="NetworkRequestType" required="Y"/>
+            <field name="NetworkRequestID" required="Y"/>
             <group name="NoCompIDs" required="N">
-                <field name="RefCompID" required="N" />
-                <field name="RefSubID" required="N" />
-                <field name="LocationID" required="N" />
-                <field name="DeskID" required="N" />
+                <field name="RefCompID" required="N"/>
+                <field name="RefSubID" required="N"/>
+                <field name="LocationID" required="N"/>
+                <field name="DeskID" required="N"/>
             </group>
         </message>
         <message name="NetworkStatusResponse" msgtype="BD" msgcat="app">
-            <field name="NetworkStatusResponseType" required="Y" />
-            <field name="NetworkRequestID" required="N" />
-            <field name="NetworkResponseID" required="N" />
-            <field name="LastNetworkResponseID" required="N" />
+            <field name="NetworkStatusResponseType" required="Y"/>
+            <field name="NetworkRequestID" required="N"/>
+            <field name="NetworkResponseID" required="N"/>
+            <field name="LastNetworkResponseID" required="N"/>
             <group name="NoCompIDs" required="Y">
-                <field name="RefCompID" required="N" />
-                <field name="RefSubID" required="N" />
-                <field name="LocationID" required="N" />
-                <field name="DeskID" required="N" />
-                <field name="StatusValue" required="N" />
-                <field name="StatusText" required="N" />
+                <field name="RefCompID" required="N"/>
+                <field name="RefSubID" required="N"/>
+                <field name="LocationID" required="N"/>
+                <field name="DeskID" required="N"/>
+                <field name="StatusValue" required="N"/>
+                <field name="StatusText" required="N"/>
             </group>
         </message>
         <message name="CollateralInquiryAck" msgtype="BG" msgcat="app">
@@ -4895,7 +4897,7 @@
             <value enum="1" description="SNAPSHOT_PLUS_UPDATES"/>
             <value enum="2" description="DISABLE_PREVIOUS_SNAPSHOT_PLUS_UPDATE_REQUEST"/>
         </field>
-        <field number="264" name="MarketDepth" type="INT" >
+        <field number="264" name="MarketDepth" type="INT">
             <!--
       Temporarily commented out until we can handle
       N>1 scenario
@@ -5733,7 +5735,8 @@
             <value enum="3" description="NON_INDEX_ARBITRAGE"/>
             <value enum="4" description="COMPETING_MARKET_MAKER"/>
             <value enum="5" description="ACTING_AS_MARKET_MAKER_OR_SPECIALIST_IN_THE_SECURITY"/>
-            <value enum="6" description="ACTING_AS_MARKET_MAKER_OR_SPECIALIST_IN_THE_UNDERLYING_SECURITY_OF_A_DERIVATIVE_SECURITY"/>
+            <value enum="6"
+                   description="ACTING_AS_MARKET_MAKER_OR_SPECIALIST_IN_THE_UNDERLYING_SECURITY_OF_A_DERIVATIVE_SECURITY"/>
             <value enum="7" description="FOREIGN_ENTITY"/>
             <value enum="8" description="EXTERNAL_MARKET_PARTICIPANT"/>
             <value enum="9" description="EXTERNAL_INTER_CONNECTED_MARKET_LINKAGE"/>
@@ -5801,7 +5804,8 @@
         <field number="549" name="CrossType" type="INT">
             <value enum="1" description="CROSS_TRADE_WHICH_IS_EXECUTED_COMPLETELY_OR_NOT"/>
             <value enum="2" description="CROSS_TRADE_WHICH_IS_EXECUTED_PARTIALLY_AND_THE_REST_IS_CANCELLED"/>
-            <value enum="3" description="CROSS_TRADE_WHICH_IS_PARTIALLY_EXECUTED_WITH_THE_UNFILLED_PORTIONS_REMAINING_ACTIVE"/>
+            <value enum="3"
+                   description="CROSS_TRADE_WHICH_IS_PARTIALLY_EXECUTED_WITH_THE_UNFILLED_PORTIONS_REMAINING_ACTIVE"/>
             <value enum="4" description="CROSS_TRADE_IS_EXECUTED_WITH_EXISTING_ORDERS_WITH_THE_SAME_PRICE"/>
         </field>
         <field number="550" name="CrossPrioritization" type="INT">
@@ -5839,7 +5843,8 @@
         <field number="562" name="MinTradeVol" type="QTY"/>
         <field number="563" name="MultiLegRptTypeReq" type="INT">
             <value enum="0" description="REPORT_BY_MULITLEG_SECURITY_ONLY"/>
-            <value enum="1" description="REPORT_BY_MULTILEG_SECURITY_AND_BY_INSTRUMENT_LEGS_BELONGING_TO_THE_MULTILEG_SECURITY"/>
+            <value enum="1"
+                   description="REPORT_BY_MULTILEG_SECURITY_AND_BY_INSTRUMENT_LEGS_BELONGING_TO_THE_MULTILEG_SECURITY"/>
             <value enum="2" description="REPORT_BY_INSTRUMENT_LEGS_BELONGING_TO_THE_MULTILEG_SECURITY_ONLY"/>
         </field>
         <field number="564" name="LegPositionEffect" type="CHAR"/>

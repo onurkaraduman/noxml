@@ -104,6 +104,13 @@ public class XmlTreeView extends TreeView {
         recreateTreeItem(rootElement);
     }
 
+    public void loadXmlText(String xmlText) throws DocumentException {
+        XmlReader xmlReader = new XmlReader(xmlText);
+        document = xmlReader.getDocument();
+        Element rootElement = document.getRootElement();
+        recreateTreeItem(rootElement);
+    }
+
 
     public void addEventHandler(XmlEventHandlerAction action, XmlEventHandler listener) {
         List<XmlEventHandler> xmlEventHandlers = actionListMap.get(action);

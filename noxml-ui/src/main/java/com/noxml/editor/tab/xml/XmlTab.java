@@ -1,5 +1,7 @@
 package com.noxml.editor.tab.xml;
 
+import com.noxml.editor.history.ChangeType;
+import com.noxml.editor.history.XmlEditorMemento;
 import com.noxml.editor.history.XmlEditorMementoManager;
 import javafx.scene.control.TreeItem;
 import org.dom4j.DocumentException;
@@ -18,23 +20,29 @@ import java.util.List;
  */
 public class XmlTab {
 
+
     private XmlTreeView xmlTreeView;
     private XmlEditorMementoManager mementoManager;
+    private ChangeType changeType = ChangeType.OPEN;
 
     /**
      * Open xml file with given path
      *
      * @param path
      */
-    public XmlTab(String path, XmlTreeView treeView) throws DocumentException {
+    public XmlTab(String path, XmlTreeView treeView, XmlEditorMementoManager mementoManager) throws DocumentException {
         init();
         this.xmlTreeView = treeView;
-        loadXml(path);
+        this.mementoManager = mementoManager;
+        if (path != null && !path.isEmpty()) {
+            loadXml(path);
+        }
     }
 
-    public XmlTab(XmlTreeView treeView) throws DocumentException {
-        init();
+    public XmlTab(XmlTreeView treeView, XmlEditorMementoManager mementoManager) throws DocumentException {
         this.xmlTreeView = treeView;
+        this.mementoManager = mementoManager;
+        init();
     }
 
     public XmlTab() {
@@ -45,7 +53,6 @@ public class XmlTab {
         if (xmlTreeView == null) {
             xmlTreeView = new XmlTreeView();
         }
-        mementoManager = new XmlEditorMementoManager();
     }
 
     public void add() {
@@ -76,7 +83,7 @@ public class XmlTab {
     }
 
     public void saveState() {
-        mementoManager.save(xmlTreeView.getRootElement());
+        mementoManager.save(xmlTreeView.getRootElement(), changeType);
     }
 
     public void refresh() {
@@ -85,16 +92,40 @@ public class XmlTab {
 
 
     public void export(String path) throws IOException {
-        try (OutputStream outputStream = new FileOutputStream(path)) {
-            OutputFormat format = OutputFormat.createPrettyPrint();
-            XMLWriter writer;
-            writer = new XMLWriter(outputStream, format);
-            writer.write(xmlTreeView.getDocument());
+        if (xmlTreeView.getDocument() != null) {
+            try (OutputStream outputStream = new FileOutputStream(path)) {
+                OutputFormat format = OutputFormat.createPrettyPrint();
+                XMLWriter writer;
+                writer = new XMLWriter(outputStream, format);
+                writer.write(xmlTreeView.getDocument());
+            }
         }
     }
 
     public void loadXml(String path) throws DocumentException {
         xmlTreeView.loadXml(path);
         saveState();
+    }
+
+    public void loadXmlText(String xml) throws DocumentException {
+        xmlTreeView.loadXmlText(xml);
+        saveState();
+    }
+
+    public void setStateById(String stateId) {
+        XmlEditorMemento state = mementoManager.findStateById(stateId);
+        xmlTreeView.recreateTreeItem(state.getState());
+    }
+
+    public void setState(XmlEditorMemento memento) {
+        xmlTreeView.recreateTreeItem(memento.getState());
+    }
+
+    public void setChangeType(ChangeType changeType) {
+        this.changeType = changeType;
+    }
+
+    public String toXml() throws IOException {
+        return xmlTreeView.toXml();
     }
 }

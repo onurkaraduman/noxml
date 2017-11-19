@@ -7,6 +7,7 @@ import org.dom4j.io.SAXReader;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -26,6 +27,13 @@ public class XmlReader implements Reader {
         this.path = path;
         this.document = reader.read(getAbsolutePath());
     }
+
+
+    public XmlReader(String xml) throws DocumentException {
+        this.reader = new SAXReader();
+        this.document = reader.read(new StringReader(xml));
+    }
+
 
     public Document getDocument() {
         return document;

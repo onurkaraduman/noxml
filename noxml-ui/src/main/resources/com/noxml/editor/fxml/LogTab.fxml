@@ -6,16 +6,16 @@
             fx:controller="com.noxml.editor.controller.LogTabController">
     <children>
         <TabPane tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
-                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
-        >
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <tabs>
                 <Tab text="Log">
                     <content>
                         <TableView fx:id="tblLog">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="Date"/>
-                                <TableColumn prefWidth="75.0" text="message"/>
-                                <TableColumn prefWidth="75.0" text="log"/>
+                                <TableColumn fx:id="tblColumnType" prefWidth="75.0" text="Type"/>
+                                <TableColumn fx:id="tblColumnDate" prefWidth="75.0" text="Date"/>
+                                <TableColumn fx:id="tblColumnMessage" prefWidth="75.0" text="message"/>
+                                <TableColumn fx:id="tblColumnLog" prefWidth="75.0" text="log"/>
                             </columns>
                         </TableView>
                     </content>

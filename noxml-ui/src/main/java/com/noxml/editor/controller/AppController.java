@@ -1,9 +1,11 @@
 package com.noxml.editor.controller;
 
-import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
+import com.noxml.editor.App;
 import com.noxml.editor.XmlEditor;
+import javafx.fxml.FXML;
 import org.dom4j.DocumentException;
+
+import java.io.IOException;
 
 
 /**
@@ -24,11 +26,21 @@ public class AppController {
     @FXML
     private MenuBarController menuController;
 
+    @FXML
+    private TextTabController textTabController;
+
+    @FXML
+    private LogTabController logTabController;
+
     public static XmlEditor editor;
 
     @FXML
-    private void initialize() throws DocumentException {
-        editor = new XmlEditor(xmlTabController.getTreeView(), editTabController.getGpEdit(), historyTabController.getTblHistory());
+    private void initialize() throws DocumentException, IOException {
+        String path = null;
+        if (App.args != null && App.args.length > 0) {
+            path = App.args[0];
+        }
+        editor = new XmlEditor(path, xmlTabController.getTreeView(), editTabController.getGpEdit(), historyTabController.getTblHistory(), textTabController.getTxtPane(), logTabController.getTblLog());
         menuController.injectXmlTabController(xmlTabController);
     }
 }

@@ -13,8 +13,10 @@ import javafx.stage.Stage;
 public class App extends Application {
     public static Parent rootNode;
     public static Stage stage;
+    public static String[] args;
 
     public static void main(String[] args) {
+        App.args = args;
         Application.launch(args);
     }
 

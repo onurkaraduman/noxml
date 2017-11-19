@@ -135,13 +135,6 @@ public class EditPane extends GridPane implements Component {
     }
 
 
-    /**
-     * Create controls according to given element to edit
-     * First record is <Label, TextField>
-     *
-     * @param xmlTreeCell
-     * @return <Label, TextField> or <TextField, TextField>
-     */
     private Map<Control, Control> createFieldControls(XmlTreeCell xmlTreeCell) {
         Map<Control, Control> controlControlMap = new HashMap<>();
         Object item = xmlTreeCell.getItem();
