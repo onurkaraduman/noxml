@@ -4,6 +4,9 @@
 
 The project is started to provide easy operation on xml files with visualization.
 
+
+ ![GUI Overview](doc/images/noxml-screenshot.png)
+
 ### Technology Stack
 * JavaFX
 
